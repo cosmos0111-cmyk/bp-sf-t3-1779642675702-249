@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · sf-t3-1779642675702-249</title>
+  <meta name="description" content="sf-t3-1779642675702-249에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-249.maphoshirts.today/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* CSS Reset & Base */
+ *, *::before, *::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+
+ html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+ }
+
+ body {
+ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+ background-color: #1a1a1a;
+ color: #e5e5e5;
+ line-height: 1.4;
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ }
+
+ /* Typography - Brutalist oversized, system mono fallback */
+ h1, h2, h3, h4, h5, h6 {
+ font-family: 'Impact', 'Arial Black', system-ui, sans-serif;
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: -0.02em;
+ color: #e5e5e5;
+ }
+
+ h1 {
+ font-size: clamp(3rem, 10vw, 5.5rem);
+ line-height: 0.9;
+ color: #ff6b35;
+ text-shadow: 4px 4px 0 #1a1a1a, 6px 6px 0 rgba(255,107,53,0.3);
+ transform: rotate(-1deg);
+ margin-bottom: 16px;
+ }
+
+ h2 {
+ font-size: clamp(2.2rem, 6vw, 3.5rem);
+ border-left: 6px solid #ff6b35;
+ padding-left: 20px;
+ margin-bottom: 32px;
+ transform: skewX(-3deg);
+ }
+
+ h3 {
+ font-size: 1.6rem;
+ border-bottom: 4px solid #ff6b35;
+ padding-bottom: 8px;
+ display: inline-block;
+ }
+
+ p {
+ font-size: 1.1rem;
+ margin-bottom: 16px;
+ max-width: 60ch;
+ color: #c0c0c0;
+ }
+
+ a {
+ color: #ff6b35;
+ text-decoration: underline;
+ text-underline-offset: 4px;
+ text-decoration-thickness: 2px;
+ }
+
+ a:hover {
+ color: #e5e5e5;
+ background-color: #ff6b35;
+ text-decoration: none;
+ }
+
+ /* Layout - full bleed, asymmetric */
+ .container {
+ max-width: 100%;
+ padding: 48px 24px;
+ margin: 0 auto;
+ }
+
+ .section-gap {
+ margin-bottom: 80px;
+ }
+
+ /* Header & Navigation */
+ header {
+ background-color: #1a1a1a;
+ border-bottom: 4px solid #ff6b35;
+ padding: 16px 24px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ }
+
+ .logo {
+ font-family: 'Impact', 'Arial Black', sans-serif;
+ font-size: 1.8rem;
+ color: #ff6b35;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ transform: rotate(-2deg);
+ }
+
+ nav ul {
+ list-style: none;
+ display: flex;
+ gap: 32px;
+ }
+
+ nav ul li a {
+ font-family: system-ui, sans-serif;
+ font-weight: 700;
+ font-size: 1.1rem;
+ color: #e5e5e5;
+ text-decoration: none;
+ text-transform: uppercase;
+ padding: 8px 12px;
+ border: 3px solid transparent;
+ transition: all 0.15s;
+ }
+
+ nav ul li a:hover {
+ border-color: #ff6b35;
+ color: #ff6b35;
+ background: none;
+ }
+
+ /* Hamburger menu */
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ gap: 6px;
+ background: none;
+ border: none;
+ padding: 8px;
+ }
+
+ .hamburger span {
+ display: block;
+ width: 32px;
+ height: 4px;
+ background-color: #ff6b35;
+ border: 2px solid #1a1a1a;
+ }
+
+ @media (max-width: 768px) {
+ .hamburger {
+ display: flex;
+ }
+
+ nav ul {
+ display: none;
+ flex-direction: column;
+ position: absolute;
+ top: 72px;
+ left: 0;
+ right: 0;
+ background-color: #1a1a1a;
+ border: 4px solid #ff6b35;
+ padding: 24px;
+ gap: 16px;
+ }
+
+ nav ul.open {
+ display: flex;
+ }
+
+ nav ul li a {
+ font-size: 1.3rem;
+ border: 3px solid #333;
+ display: block;
+ text-align: center;
+ }
+
+ .container {
+ padding: 32px 16px;
+ }
+ }
+
+ /* Hero */
+ .hero {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 32px;
+ padding: 80px 24px;
+ background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+ border: 4px solid #333;
+ margin-bottom: 80px;
+ position: relative;
+ }
+
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: -12px;
+ left: -12px;
+ width: 100%;
+ height: 100%;
+ border: 3px solid #ff6b35;
+ z-index: -1;
+ }
+
+ .hero-content {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ }
+
+ .hero-visual {
+ background: repeating-linear-gradient(45deg, #ff6b35 0px, #ff6b35 4px, #1a1a1a 4px, #1a1a1a 12px);
+ min-height: 300px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border: 4px solid #e5e5e5;
+ transform: rotate(2deg);
+ font-size: 4rem;
+ font-family: 'Impact', sans-serif;
+ color: #e5e5e5;
+ text-shadow: 6px 6px 0 #1a1a1a;
+ padding: 24px;
+ }
+
+ @media (max-width: 768px) {
+ .hero {
+ grid-template-columns: 1fr;
+ padding: 48px 16px;
+ }
+
+ .hero-visual {
+ min-height: 200px;
+ font-size: 2.5rem;
+ }
+ }
+
+ /* Buttons */
+ .btn {
+ display: inline-block;
+ font-family: 'Impact', sans-serif;
+ font-size: 1.3rem;
+ text-transform: uppercase;
+ padding: 16px 40px;
+ background-color: #ff6b35;
+ color: #1a1a1a;
+ border: 4px solid #e5e5e5;
+ text-decoration: none;
+ transition: all 0.1s;
+ transform: rotate(-1deg);
+ cursor: pointer;
+ }
+
+ .btn:hover {
+ background-color: #1a1a1a;
+ color: #ff6b35;
+ border-color: #ff6b35;
+ transform: rotate(1deg) scale(1.02);
+ }
+
+ /* Cards */
+ .card-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 32px;
+ margin-top: 32px;
+ }
+
+ .card {
+ background-color: #222;
+ border: 4px solid #333;
+ padding: 32px 24px;
+ transition: all 0.15s;
+ position: relative;
+ }
+
+ .card:hover {
+ border-color: #ff6b35;
+ transform: translate(-4px, -4px);
+ box-shadow: 8px 8px 0 rgba(255,107,53,0.3);
+ }
+
+ .card h3 {
+ font-size: 1.4rem;
+ margin-bottom: 16px;
+ border-bottom: 3px solid #ff6b35;
+ display: inline-block;
+ }
+
+ .card p {
+ font-size: 0.95rem;
+ }
+
+ /* UGC Review Cards */
+ .review-card {
+ background-color: #1a1a1a;
+ border: 4px solid #444;
+ padding: 24px;
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+ }
+
+ .review-card .nickname {
+ font-family: 'Impact', sans-serif;
+ font-size: 1.4rem;
+ color: #ff6b35;
+ text-transform: uppercase;
+ }
+
+ .review-card .date {
+ font-size: 0.85rem;
+ color: #888;
+ }
+
+ .review-card .stars {
+ color: #ff6b35;
+ font-size: 1.4rem;
+ letter-spacing: 2px;
+ }
+
+ .review-card .review-text {
+ font-style: italic;
+ border-left: 4px solid #ff6b35;
+ padding-left: 16px;
+ color: #ccc;
+ }
+
+ /* Asymmetric blocks */
+ .asymmetric-grid {
+ display: grid;
+ grid-template-columns: 1.5fr 1fr;
+ gap: 32px;
+ margin-top: 48px;
+ }
+
+ .asymmetric-grid .block {
+ border: 4px solid #444;
+ padding: 32px;
+ background-color: #1e1e1e;
+ }
+
+ .asymmetric-grid .block:first-child {
+ transform: rotate(-1deg);
+ border-color: #ff6b35;
+ }
+
+ .asymmetric-grid .block:last-child {
+ transform: rotate(1deg);
+ margin-top: -32px;
+ }
+
+ @media (max-width: 768px) {
+ .asymmetric-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .asymmetric-grid .block:last-child {
+ margin-top: 0;
+ transform: rotate(0);
+ }
+ }
+
+ /* Footer */
+ footer {
+ border-top: 6px solid #ff6b35;
+ padding: 48px 24px 24px;
+ margin-top: auto;
+ background-color: #111;
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ gap: 32px;
+ }
+
+ footer h4 {
+ font-size: 1.2rem;
+ margin-bottom: 16px;
+ border-bottom: 3px solid #ff6b35;
+ display: inline-block;
+ }
+
+ footer p, footer a {
+ font-size: 0.9rem;
+ }
+
+ footer .copyright {
+ grid-column: 1 / -1;
+ text-align: center;
+ padding-top: 32px;
+ border-top: 2px solid #333;
+ font-size: 0.85rem;
+ color: #666;
+ }
+
+ @media (max-width: 768px) {
+ footer {
+ grid-template-columns: 1fr;
+ text-align: center;
+ }
+
+ footer h4 {
+ display: block;
+ }
+ }
+
+ /* Utility */
+ .text-accent {
+ color: #ff6b35;
+ }
+
+ .border-accent {
+ border-color: #ff6b35;
+ }
+
+ .skew-left {
+ transform: skewX(-3deg);
+ }
+
+ .skew-right {
+ transform: skewX(3deg);
+ }
+
+ .negative-margin {
+ margin-left: -24px;
+ margin-right: -24px;
+ }
+
+ @media (max-width: 768px) {
+ .negative-margin {
+ margin-left: -16px;
+ margin-right: -16px;
+ }
+ }
+
+ /* Phone link styling */
+ .phone-link {
+ font-family: 'Impact', sans-serif;
+ font-size: 1.8rem;
+ color: #ff6b35;
+ text-decoration: none;
+ border: 4px solid #ff6b35;
+ padding: 12px 24px;
+ display: inline-block;
+ transition: all 0.1s;
+ }
+
+ .phone-link:hover {
+ background-color: #ff6b35;
+ color: #1a1a1a;
+ }
+
+ /* SVG texture overlay simulation */
+ .texture-bg {
+ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Cpath d='M1 1h1v1H1zM3 3h1v1H3z' fill='%23ffffff' opacity='0.03'/%3E%3C/svg%3E");
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · sf-t3-1779642675702-249">
+  <meta property="og:description" content="sf-t3-1779642675702-249에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-249.maphoshirts.today/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="logo">📈 BRUTAL SEO</div>
+ <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+ 
+ 
+ 
+ </button>
+ <nav>
+ <ul id="nav-menu">
+ <li><a href="#hero">홈</a></li>
+ <li><a href="#services">서비스</a></li>
+ <li><a href="#reviews">리뷰</a></li>
+ <li><a href="#contact">연락처</a></li>
+ </ul>
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1504.html">구글 상위노출 대행 선택 전에 보는 마포 셔츠룸 예약 시 눈탱이 피하는 법 체크포인트</a>
+        <p class="post-item__summary">마포의 구글 상위노출 대행 정보는 단순 목록보다 맥락이 중요합니다. 어떤 상황에서 필요한 정보인지 먼저 정하면 검색 결과를 훨씬 덜 흔들리게 읽을 수 있습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-803.html">구글 상위노출 대행</a>
+        <p class="post-item__summary">구글 상위노출 대행 서비스를 찾는 분은 크게 두 가지 관점에서 접근해야 합니다. 하나는 콘텐츠와 키워드 전략이고, 다른 하나는 검색엔진이 웹사이트를 어떻게 인지하고 처리하는지에 대한 기술적 이해입니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0193.html">주식투자 업계에서 구글 상위노출 대행이 필요한 이유</a>
+        <p class="post-item__summary">주식투자 업계는 경쟁이 치열한 만큼 온라인에서의 신뢰성과 가시성이 무엇보다 중요하다. 아무리 뛰어난 투자 전략과 분석 자료를 갖추고 있어도 잠재 고객이 검색 결과에서 찾지 못하면 의미가 없다. 이러</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0194.html">구글 상위노출 대행으로 주식투자 고객을 마포에서 누리다</a>
+        <p class="post-item__summary">구글 상위노출 대행은 주식투자 분야에서도 점점 더 필수적인 마케팅 수단이 되고 있다. 투자자들이 정보 검색 시 상위에 노출되면, 신뢰도를 높이고 유입 폭을 확대할 수 있다. 특히 수많은 투자 커뮤니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0195.html">주식투자 콘텐츠 경쟁력, 구글 상위노출 대행에서 출발한다</a>
+        <p class="post-item__summary">주식투자 정보를 제공하는 사이트라면 검색 트래픽의 중요성을 잘 알고 있을 것이다. 대부분의 투자자들은 신뢰할 만한 분석과 최신 정보를 찾기 위해 구글 검색을 활용한다. 상위에 노출된 콘텐츠가 더 많</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0196.html">구글 상위노출 대행으로 마포 주식투자 매출 끌어올리기</a>
+        <p class="post-item__summary">구글 상위노출 대행은 주식투자 시 시장 내 가시성을 높이는 핵심 수단이다. 검색 결과 최상단에 노출되면 투자자들의 관심이 급증한다. 이 과정에서 필요한 것은 키워드 전략과 지속적인 콘텐츠 개선이다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0197.html">구글 상위노출 대행이 필요한 마포 주식투자 사이트의 현실</a>
+        <p class="post-item__summary">주식투자 정보를 제공하는 사이트는 콘텐츠의 정확성과 신뢰성이 가장 중요하다. 마포 지역을 기반으로 금융 페이지를 운영한다면 구글 검색에서 상위 노출이 필수적이다. 하지만 주식투자 키워드는 경쟁이 치</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0198.html">구글 상위노출 대행으로 스타트업 성장 가속</a>
+        <p class="post-item__summary">스타트업이 디지털 마케팅을 활용하려 할 때 가장 먼저 주목하는 것이 바로 검색 엔진 최적화다. 구글 상위노출 대행 서비스를 이용하면 키워드 경쟁에서 앞서 나갈 수 있다. 단, 서비스 선택 시 전문성</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0199.html">주식투자 사이트라면 주목해야 할 구글 상위노출 대행 전략</a>
+        <p class="post-item__summary">마포 지역을 중심으로 운영되는 주식투자 전문 사이트는 검색 유입 의존도가 높을 수밖에 없다. 투자자들은 최신 정보를 빠르게 찾길 원하며, 이는 곧 검색 결과 상단에 노출되는 사이트로 향한다. 구글 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0200.html">마포 주식투자자라면 구글 상위노출 대행을 통한 가시성 증대가 필수</a>
+        <p class="post-item__summary">마포의 주식투자 전문가라면, 검색 엔진 최적화가 필수입니다. 구글 상위노출 대행은 투자 정보를 빠르게 찾아 주는 기반이 됩니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0201.html">마포 지역 주식투자 전문가를 위한 구글 상위노출 대행 활용법</a>
+        <p class="post-item__summary">주식투자 관련 콘텐츠는 경쟁이 치열해 아무리 좋은 분석 자료를 올려도 사용자에게 도달하지 못하면 의미가 없다. 특히 마포 지역에서 활동하는 투자 전문가나 블로거라면 지역 기반 키워드에서조차 노출이 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0202.html">구글 상위노출 대행, 주식투자 마포에서 꼭 필요한 이유</a>
+        <p class="post-item__summary">구글 상위노출 대행은 주식투자자에게 검색 노출이 매출과 직결되는 시대다. 마포에서 지역 투자 정보를 찾는 팔로워는 주로 검색을 통해 첫 접촉을 한다. 상위에 노출되면 신뢰도가 급격히 상승하고 클릭률</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0203.html">마포 주식투자 업계, 구글 상위노출 대행으로 디지털 전환 가속</a>
+        <p class="post-item__summary">주식투자 정보 제공 업체들이 온라인 마케팅 전략을 재정비하고 있다. 최근 마포구를 중심으로 한 금융 정보 업계에서 구글 상위노출 대행 서비스 도입이 크게 늘어나는 추세다. 검색 결과 상단 노출이 고</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0204.html">구글 상위노출 대행이 마포 주식투자 시장을 바꾼다</a>
+        <p class="post-item__summary">구글 상위노출 대행을 통해 마포 지역의 주식투자 서비스가 눈에 띄게 성장하고 있다. 주요 키워드와 SEO 전략은 투자자들의 검색량을 크게 끌어올리며, 실질적인 리드 전환률을 향상시킨다. 이 과정에서</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0205.html">마포에서 주식투자 전문 사이트의 구글 상위노출 대행 운영 팁</a>
+        <p class="post-item__summary">주식투자 관련 콘텐츠는 경쟁이 치열한 만큼, 아무리 좋은 분석 자료를 올려도 검색 결과에서 뒷페이지에 머물면 방문자 유입이 거의 없다. 마포 지역에서 운영하는 주식투자 정보 사이트의 경우 지역성과 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0206.html">구글 상위노출 대행으로 마포 주식투자 비즈니스 성장 가속화</a>
+        <p class="post-item__summary">구글 상위노출 대행은 마포 지역 주식투자 기업이 디지털 경쟁력을 높이기 위해 꼭 필요한 서비스입니다. 온라인 심층 분석과 키워드 선택을 통해 검색 랭킹을 빠르게 끌어올리고, 잠재 고객에게 명확한 메</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0207.html">구글 상위노출 대행, 마포 주식투자 사이트가 놓치면 안 되는 포인트</a>
+        <p class="post-item__summary">마포 지역에서 주식투자 관련 콘텐츠를 운영하는 사이트가 늘어나면서 구글 상위노출 대행에 대한 관심이 높아지고 있다. 금융 정보는 시의성이 가장 중요한 요소이므로 검색 결과 상단에 노출되는 것이 방문</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0208.html">구글 상위노출 대행으로 마포 주식투자 시장을 스마트하게 리드하다</a>
+        <p class="post-item__summary">마포에 자리 잡은 주식투자 기관이 직면한 가장 큰 도전은 네트워크 노출이다. 구글 검색 결과 상위에 노출되는 것이 고객 확보의 열쇠가 되고 있다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0013.html">구글 상위노출 대행을 통한 틈새 트래픽 외환 거래 전략 수립법</a>
+        <p class="post-item__summary">디지털 마케팅 시장에서 구글 상위노출 대행 서비스를 활용하는 목적은 단순히 방문자를 늘리는 것에 그치지 않습니다. 특정 목적을 가진 유입 경로를 설계하고 이를 실제 투자 수익으로 연결하는 과정이 매</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0014.html">구글 상위노출 대행 및 도메인 파워 강화를 위한 모발이식 솔루션</a>
+        <p class="post-item__summary">웹사이트의 가시성을 높이기 위해 구글 상위노출 대행 서비스를 고민하는 운영자들은 늘어나는 추세입니다. 기술적인 최적화가 필수적인 가운데, 특정 카테고리에서는 브랜드의 신뢰도를 높이는 것이 무엇보다 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
